@@ -4,7 +4,7 @@
 proxy:
   container_name: proxy
   restart: always
-  image: accenture/adop-nginx:0.2.0
+  image: ntdc/adop-nginx:latest
   #build: ../images/docker-nginx/
   net: ${CUSTOM_NETWORK_NAME}
   ports:
@@ -176,7 +176,7 @@ sonar-mysql:
 sonar:
   container_name: sonar
   restart: always
-  image: accenture/adop-sonar:0.2.0
+  image: ntdc/adop-sonar:latest
   #build: ../images/docker-sonar/
   net: ${CUSTOM_NETWORK_NAME}
   expose:
@@ -200,7 +200,7 @@ sonar:
 jenkins:
   container_name: jenkins
   restart: always
-  image: accenture/adop-jenkins:0.2.0
+  image: ntdc/adop-jenkins:latest
   #build: ../images/docker-jenkins/
   net: ${CUSTOM_NETWORK_NAME}
   ports:
@@ -241,7 +241,7 @@ jenkins:
     SONAR_DB_PASSWORD: ${SONAR_DB_PASSWORD}
     SONAR_PLUGIN_VERSION: ""
     SONAR_ADDITIONAL_PROPS: ""
-    SONAR_RUNNER_VERSION: "2.4"
+    SONAR_RUNNER_VERSION: "2.8"
     ANT_VERSION: "1.9.4"
     MAVEN_VERSION: "3.0.5"
     NODEJS_VERSION: "6.9.2"
